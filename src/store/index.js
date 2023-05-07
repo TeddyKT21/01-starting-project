@@ -1,12 +1,12 @@
 
 const counterReducer = (state = {count: 0}, action) =>{
-    if (action === 'add'){
+    if (action.type === 'add'){
         state.count += 1;
     }
-    if (action === 'subtract'){
+    if (action.type === 'subtract'){
         state.count -= 1;
     }
-    return state
+    return {...state}
 }
 const store = require('redux').createStore(counterReducer);
 
